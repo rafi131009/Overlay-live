@@ -1,33 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overlay Adaptif</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: transparent;
-    }
-
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;       /* lebar penuh layar */
-      height: auto;       /* biar proporsional 16:9 */
-      max-height: 100vh;  /* jangan lebih tinggi dari layar */
-      object-fit: contain;
-      pointer-events: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Overlay 16:9</title>
+    <link rel="stylesheet" href="style-gif.css">
 </head>
 <body>
-  <img src="overlay.gif" class="overlay" alt="Overlay">
+    <div class="gif-overlay">
+        <!-- GIF Background -->
+        <img src="overlay.gif" alt="Overlay GIF" class="gif-background">
+    </div>
 </body>
 </html>
