@@ -10,6 +10,7 @@ width: 150%;
 height: 150%;
 object-fit: contain;
 pointer-events: none;
+transform: scale(1.2);
 }
 
 /* Teks berjalan */
