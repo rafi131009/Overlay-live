@@ -1,31 +1,35 @@
-/* ===== Overlay Fullscreen (versi pertama, posisi diturunkan) ===== */
-
-html, body {
+body {
   margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100dvh; /* full tinggi layar */
   background: transparent;
   overflow: hidden;
-  position: relative;
 }
 
-/* Gambar overlay utama */
+/* Overlay utama — diturunkan sedikit */
 .overlay {
   position: absolute;
-  top: 0%; /* turunkan sedikit dari atas (bisa ubah 5 → 8% kalau masih kurang) */
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  object-fit: cover; /* gambar menutupi layar penuh */
-  background: transparent;
+  top: 5%; /* tambahkan ini untuk menurunkan posisi keseluruhan overlay */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   pointer-events: none;
 }
 
-/* Aman untuk notch dan gesture bar */
-body {
-  padding: env(safe-area-inset-top)
-           env(safe-area-inset-right)
-           env(safe-area-inset-bottom)
-           env(safe-area-inset-left);
+/* ====== TEKS BERJALAN ====== */
+.text-banner {
+  position: absolute;
+  bottom: 80px; /* sebelumnya 120px, diturunkan sedikit agar lebih ke bawah */
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  font-size: 28px;
+  white-space: nowrap;
+  animation: scrollText 15s linear infinite;
+}
+
+/* Animasi teks */
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
