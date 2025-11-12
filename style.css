@@ -1,39 +1,32 @@
 body {
-  margin: 0;
-  background: transparent;
-  overflow: hidden;
+margin: 0;
+background: transparent;
+overflow: hidden;
 }
 
-/* Overlay utama */
 .overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-
-  /* Zoom halus */
-  transform: translate(-50%, -50%) scale(1.15); /* 1.15 = perbesar 15% */
-  transform-origin: center center; /* biar zoom-nya dari tengah */
+position: absolute;
+width: 110%;
+height: 110%;
+object-fit: contain;
+pointer-events: none;
 }
 
-/* ====== TEKS BERJALAN ====== */
+/* Teks berjalan */
 .text-banner {
-  position: absolute;
-  bottom: 120px;
-  width: 100%;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px 5px black;
-  font-size: 28px;
-  white-space: nowrap;
-  animation: scrollText 15s linear infinite;
+position: absolute;
+bottom: 120px;
+width: 100%;
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+color: white;
+text-shadow: 2px 2px 5px black;
+font-size: 28px;
+white-space: nowrap;
+animation: scrollText 15s linear infinite;
 }
 
 @keyframes scrollText {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+0% { transform: translateX(100%); }
+100% { transform: translateX(-100%); }
 }
