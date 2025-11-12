@@ -1,33 +1,33 @@
-/* ======== Overlay Full Screen Fix (Android, Streamlabs, Desktop) ======== */
+/* ======== Overlay Fix untuk itel P55 5G - Live 16:9 ======== */
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 56.25vw; /* rasio 16:9 (9/16 = 0.5625) */
   background: transparent;
   overflow: hidden;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* pusatkan area live di layar 20:9 */
 }
 
-/* Fix tinggi layar khusus Android */
-@supports (-webkit-touch-callout: none) {
-  html, body {
-    height: -webkit-fill-available;
-  }
-}
-
-/* ======== Elemen Utama Overlay ======== */
+/* Elemen utama overlay */
 .overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ubah ke contain kalau mau proporsi tetap */
+  object-fit: cover; /* gunakan contain jika ingin proporsi GIF tetap */
   background: transparent;
-  pointer-events: none; /* Supaya overlay tidak bisa diklik */
+  pointer-events: none;
+}
+
+/* Aman dari notch dan gesture bar */
+body {
+  padding: env(safe-area-inset-top)
+           env(safe-area-inset-right)
+           env(safe-area-inset-bottom)
+           env(safe-area-inset-left);
 }
