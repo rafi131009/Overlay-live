@@ -4,20 +4,25 @@ body {
   overflow: hidden;
 }
 
-/* Overlay utama — diturunkan sedikit */
+/* Overlay utama */
 .overlay {
   position: absolute;
-  top: 5%; /* tambahkan ini untuk menurunkan posisi keseluruhan overlay */
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
   object-fit: contain;
   pointer-events: none;
+
+  /* Zoom halus */
+  transform: translate(-50%, -50%) scale(1.15); /* 1.15 = perbesar 15% */
+  transform-origin: center center; /* biar zoom-nya dari tengah */
 }
 
 /* ====== TEKS BERJALAN ====== */
 .text-banner {
   position: absolute;
-  bottom: 80px; /* sebelumnya 120px, diturunkan sedikit agar lebih ke bawah */
+  bottom: 120px;
   width: 100%;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
@@ -28,7 +33,6 @@ body {
   animation: scrollText 15s linear infinite;
 }
 
-/* Animasi teks */
 @keyframes scrollText {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
