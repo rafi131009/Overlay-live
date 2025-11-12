@@ -1,32 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  background: transparent;
-  overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
+/* Container utama */
+.gif-overlay {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
 }
 
-/* Teks berjalan */
-.text-banner {
-  position: absolute;
-  bottom: 120px;
-  width: 100%;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px 5px black;
-  font-size: 28px;
-  white-space: nowrap;
-  animation: scrollText 15s linear infinite;
+/* GIF Background */
+.gif-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan GIF menutupi seluruh area */
+    display: block;
 }
 
-@keyframes scrollText {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+/* Untuk memastikan aspect ratio 16:9 */
+@media (min-aspect-ratio: 16/9) {
+    .gif-background {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .gif-background {
+        width: auto;
+        height: 100%;
+    }
 }
