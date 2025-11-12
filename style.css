@@ -1,0 +1,33 @@
+/* ======== Overlay Full Screen Fix (Android, Streamlabs, Desktop) ======== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Fix tinggi layar khusus Android */
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    height: -webkit-fill-available;
+  }
+}
+
+/* ======== Elemen Utama Overlay ======== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ubah ke contain kalau mau proporsi tetap */
+  background: transparent;
+  pointer-events: none; /* Supaya overlay tidak bisa diklik */
+}
