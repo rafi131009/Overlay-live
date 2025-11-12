@@ -1,33 +1,32 @@
-/* ======== Overlay Fix untuk itel P55 5G - Live 16:9 ======== */
-html, body {
+body {
   margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 56.25vw; /* rasio 16:9 (9/16 = 0.5625) */
   background: transparent;
   overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* pusatkan area live di layar 20:9 */
 }
 
-/* Elemen utama overlay */
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* gunakan contain jika ingin proporsi GIF tetap */
-  background: transparent;
+  object-fit: contain;
   pointer-events: none;
 }
 
-/* Aman dari notch dan gesture bar */
-body {
-  padding: env(safe-area-inset-top)
-           env(safe-area-inset-right)
-           env(safe-area-inset-bottom)
-           env(safe-area-inset-left);
+/* Teks berjalan */
+.text-banner {
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  font-size: 28px;
+  white-space: nowrap;
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
