@@ -1,34 +1,28 @@
-/* ===== Overlay Horizontal Fix (tidak kepotong bawah) ===== */
+/* ===== Overlay Fullscreen (versi pertama, posisi diturunkan) ===== */
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh; /* pakai tinggi layar penuh */
+  height: 100dvh; /* full tinggi layar */
   background: transparent;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* tengah vertikal */
+  position: relative;
 }
 
-/* Area overlay 16:9, selalu pas di tengah layar */
+/* Gambar overlay utama */
 .overlay {
+  position: absolute;
+  top: 5%; /* turunkan sedikit dari atas (bisa ubah 5 → 8% kalau masih kurang) */
+  left: 0;
   width: 100vw;
-  height: 56.25vw; /* rasio 16:9 (9/16 = 0.5625) */
-  max-height: 100vh; /* jangan lebih tinggi dari layar */
-  object-fit: contain;
+  height: 100dvh;
+  object-fit: cover; /* gambar menutupi layar penuh */
   background: transparent;
   pointer-events: none;
-
-  /* posisi di tengah layar secara vertikal */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
-/* Aman untuk notch dan gesture area */
+/* Aman untuk notch dan gesture bar */
 body {
   padding: env(safe-area-inset-top)
            env(safe-area-inset-right)
