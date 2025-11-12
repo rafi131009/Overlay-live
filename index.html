@@ -3,14 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neatcill Overlay</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Overlay Adaptif</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;       /* lebar penuh layar */
+      height: auto;       /* biar proporsional 16:9 */
+      max-height: 100vh;  /* jangan lebih tinggi dari layar */
+      object-fit: contain;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-  <img src="overlay.gif" class="overlay" alt="Neatcill Overlay">
-
-  <!-- Contoh teks berjalan -->
-
-  </div>
+  <img src="overlay.gif" class="overlay" alt="Overlay">
 </body>
 </html>
