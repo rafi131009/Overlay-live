@@ -13,7 +13,7 @@ html, body {
 /* Gambar overlay utama */
 .overlay {
   position: absolute;
-  top: 1%; /* turunkan sedikit dari atas (bisa ubah 5 → 8% kalau masih kurang) */
+  top: 0%; /* turunkan sedikit dari atas (bisa ubah 5 → 8% kalau masih kurang) */
   left: 0;
   width: 100vw;
   height: 100dvh;
