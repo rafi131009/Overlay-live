@@ -1,27 +1,21 @@
-/* Hilangkan margin dan scroll */
+/* Reset & set transparan */
 html, body {
   margin: 0;
   padding: 0;
-  background: transparent; /* agar bisa transparan di OBS */
+  background: transparent; /* agar bisa transparan di OBS/Streamlabs */
   overflow: hidden;
 }
 
 /* Gambar overlay */
 .overlay {
-  position: absolute;
-  bottom: 0;        /* menempel di bawah layar */
-  left: 0;
-  width: 100%;      /* lebar penuh */
-  height: auto;     /* tinggi otomatis sesuai proporsi gambar */
-  pointer-events: none; /* tidak menghalangi klik di OBS */
-  object-fit: contain;
-}        height: auto;
-    }
-}
-
-@media (max-aspect-ratio: 16/9) {
-    .gif-background {
-        width: auto;
-        height: 100%;
-    }
+  position: fixed;
+  bottom: 0;             /* menempel di bawah layar */
+  left: 50%;             /* posisikan di tengah horizontal */
+  transform: translateX(-50%);
+  width: 100%;           /* lebar penuh layar */
+  height: auto;          /* tinggi menyesuaikan proporsi gambar */
+  max-width: 1920px;     /* batas maksimal jika layar terlalu lebar */
+  object-fit: contain;   /* biar tidak terpotong */
+  pointer-events: none;  /* agar tidak menghalangi klik */
+  user-select: none;     /* tidak bisa diseret/dipilih */
 }
