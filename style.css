@@ -1,40 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Hilangkan margin dan scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent; /* agar bisa transparan di OBS */
+  overflow: hidden;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: transparent;
-}
-
-/* Container utama */
-.gif-overlay {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-}
-
-/* GIF Background */
-.gif-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Pastikan GIF menutupi seluruh area */
-    display: block;
-}
-
-/* Untuk memastikan aspect ratio 16:9 */
-@media (min-aspect-ratio: 16/9) {
-    .gif-background {
-        width: 100%;
-        height: auto;
+/* Gambar overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;        /* menempel di bawah layar */
+  left: 0;
+  width: 100%;      /* lebar penuh */
+  height: auto;     /* tinggi otomatis sesuai proporsi gambar */
+  pointer-events: none; /* tidak menghalangi klik di OBS */
+  object-fit: contain;
+}        height: auto;
     }
 }
 
